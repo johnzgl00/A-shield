@@ -1,4 +1,5 @@
 #include <iostream>;
+#include <unistd.h>;
 #include <string>;
 #include <stdlib.h>;
 using namespace std;
@@ -31,7 +32,7 @@ void get_command_msg() {
 
 void check_command() {
 	if (command == "whoami") {
-		cout << "username: " + username;
+		system("whoami");
 	}
 	else if (command == "") {
 		//Do nothing
@@ -41,12 +42,21 @@ void check_command() {
 		cout << "	id: " + deviceId + "\n";
 		cout << "	platform: " + platform;
 	}
+	else if (command == "device -ip") {
+		system("hostname -I");
+	}
+	else if (command == "device -ip -all"){
+		system("ifconfig");
+	}
 	else if (command == "power-down") {
-		cout << "Stopping proccesses...";
+		system("sudo shutdown now");
 		exit(1);
 	}
-	else if (command == "proccess --kill") {
-		cout << "Killing proccesses...";
+	else if (command == "proccess --show") {
+		system("ps aux");
+	}
+	else if (command == "exit") {
+		exit(1);
 	}
 	else {
 		cout << "Err: command not found (code:404)";
@@ -62,3 +72,4 @@ int main() {
 		check_command();
 	}
 }
+

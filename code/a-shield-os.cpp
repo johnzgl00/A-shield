@@ -31,7 +31,7 @@ void get_command_msg() {
 
 void check_command() {
 	if (command == "whoami") {
-		cout << "username: " + username;
+		system("whoami");
 	}
 	else if (command == "") {
 		//Do nothing
@@ -42,11 +42,14 @@ void check_command() {
 		cout << "	platform: " + platform;
 	}
 	else if (command == "power-down") {
-		cout << "Stopping proccesses...";
+		system("sudo shutdown now");
 		exit(1);
 	}
-	else if (command == "proccess --kill") {
-		cout << "Killing proccesses...";
+	else if (command == "proccess --show") {
+		system("ps aux");
+	}
+	else if (command == "exit") {
+		exit(1);
 	}
 	else {
 		cout << "Err: command not found (code:404)";

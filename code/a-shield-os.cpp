@@ -38,7 +38,7 @@ void check_command() {
 		//Do nothing
 	}
 	else if (command == "enter hacking mode") {
-		system("sudo python hacking-mode.py");
+		system("./hacking-mode");
 		exit(1);
 	}
 	else if (command == "device -id") {

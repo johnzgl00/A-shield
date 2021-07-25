@@ -1,7 +1,7 @@
-#include <iostream>;
-#include <unistd.h>;
-#include <string>;
-#include <stdlib.h>;
+#include <iostream>
+#include <unistd.h>
+#include <string>
+#include <stdlib.h>
 using namespace std;
 
 //Colors

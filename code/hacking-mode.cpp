@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <unistd.h>
 using namespace std;
 
 //Colors
@@ -15,6 +16,7 @@ string colorBlue = "\e[1;34m";
 string command;
 
 int main() {
+	system("clear");
 	cout << colorRed + "|---------------------|\n";
 	cout << colorRed + "|    Attack Mode (1)  |\n";
 	cout << colorRed + "|---------------------|\n";
@@ -29,10 +31,16 @@ int main() {
 
 	if (command == "1") {
 		cout << colorRed + "Attack Mode Selected\n";
+		sleep(1.5);
+		system("clear");
+		system("./attack");
 	}
 	else if (command == "2") {
 		cout << colorBlue + "Recon Mode Selected\n";
+		sleep(1.5);
+		system("clear");
 	}else if (command == "exit") {
+		system("clear");
 		exit(1);
 	}
 }

@@ -11,17 +11,28 @@ string colorMagenta = "\e[1;35m";
 string colorCyan = "\e[1;36m";
 string colorBlue = "\e[1;34m";
 
-void show_recon_attack_btns () {
-	cout << colorRed + "|-----------------|\n";
-	cout << colorRed + "|   Attack Mode   |\n";
-	cout << colorRed + "|-----------------|\n";
-	cout << "\n";
-	cout << colorBlue+ "|-----------------|\n";
-	cout << colorBlue+ "|    Recon Mode   |\n";
-	cout << colorBlue+ "|-----------------|\n";
-	cout << noColor;
-}
+//Vars
+string command;
 
 int main() {
-	show_recon_attack_btns();
+	cout << colorRed + "|---------------------|\n";
+	cout << colorRed + "|    Attack Mode (1)  |\n";
+	cout << colorRed + "|---------------------|\n";
+	cout << "\n";
+	cout << colorBlue+ "|---------------------|\n";
+	cout << colorBlue+ "|    Recon Mode (2)   |\n";
+	cout << colorBlue+ "|---------------------|\n";
+	cout << noColor;
+	
+	cout << colorYellow + "Option: " + noColor;
+	getline(cin, command);
+
+	if (command == "1") {
+		cout << colorRed + "Attack Mode Selected\n";
+	}
+	else if (command == "2") {
+		cout << colorBlue + "Recon Mode Selected\n";
+	}else if (command == "exit") {
+		exit(1);
+	}
 }
